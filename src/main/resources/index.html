@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Мой Браузер - Поиск</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 40px;
+      color: #b4009e;
+    }
+
+    .search-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .search-input {
+      padding: 14px;
+      font-size: 24px;
+      width: 500px;
+      background-color: #252526;
+      color: #b4009e;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .search-button {
+      padding: 14px 30px;
+      font-size: 24px;
+      background-color: #b4009e;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-button:hover {
+      background-color: #9d0091;
+    }
+  </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>Flowy Browser</h1>
+        <form class="search-form">
+            <input id="search-input" type="text" class="search-input" placeholder="Введите поисковый запрос">
+            <button id="search-button" type="button" class="search-button">Найти</button>
+        </form>
+    </div>
+</div>
+
+<script>
+// Обработчик события нажатия кнопки "Найти"
+document.getElementById("search-button").addEventListener("click", function(event) {
+    event.preventDefault(); // Предотвращаем отправку формы
+
+    var searchInput = document.getElementById("search-input").value;
+    var searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchInput);
+    window.location.href = searchUrl; // Переход на страницу поиска Google
+});
+</script>
+
+</body>
+</html>
